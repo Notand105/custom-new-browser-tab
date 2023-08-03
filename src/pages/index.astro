@@ -1,6 +1,7 @@
 ---
 import Data from "../data/links.json";
 import Link from "../Components/Link.astro";
+import Searchbar from "../Components/Searchbar.svelte";
 ---
 
 <html lang="en">
@@ -8,20 +9,27 @@ import Link from "../Components/Link.astro";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+	<meta name="description" content="custom new tab web page" />
     <title>New Tab</title>
   </head>
   <body>
-    {
-      Data.map((section) => (
-        <div>
-          <h3 title={section.tema}>X</h3>
-          <div>
-            {section.links.map((link) => (
-              <Link titulo={link.nombre} url={link.url} />
-            ))}
-          </div>
-        </div>
-      ))
-    }
-  </body>
+	<header>
+		<h1>Notand</h1>
+	</header>
+	<main>
+		{
+		  Data.map((section) => (
+			<div>
+			  <h3 title={section.tema}>X</h3>
+			  <div>
+				{section.links.map((link) => (
+				  <Link titulo={link.nombre} url={link.url} />
+				))}
+			  </div>
+			</div>
+		  ))
+		}
+		<Searchbar client:visible />
+	</main>
+</body>
 </html>
