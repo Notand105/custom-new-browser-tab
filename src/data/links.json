@@ -1,0 +1,84 @@
+[
+    {
+        "tema":"entretención",
+        "links":[
+            {
+                "nombre" : "Netflix",
+                "url":"https://www.netflix.com/",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Youtube",
+                "url":"https://www.youtube.com/",
+                "img" : "#"
+            }
+
+        ]
+    },
+    {
+        "tema":"programación",
+        "links":[
+            {
+                "nombre" : "Github",
+                "url":"www.github.com",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Localhost 3000",
+                "url":"https://localhost:3000",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Localhost 5173",
+                "url":"https://localhost:5173",
+                "img" : "#"
+            }
+
+        ]
+    },
+    {
+        "tema":"diseño",
+        "links":[
+            {
+                "nombre" : "Realtime colors",
+                "url":"https://realtimecolors.com/?colors=000000-ffffff-8fb3ff-ebf1ff-d41d6d",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Penpot",
+                "url":"https://design.penpot.app/",
+                "img" : "#"
+            }
+        ]
+    },
+    {
+        "tema":"Organización",
+        "links":[
+            {
+                "nombre" : "Trello",
+                "url":"https://www.trello.com",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Notion",
+                "url":"https://notion.so",
+                "img" : "#"
+            }
+        ]
+    },
+    {
+        "tema":"Universidad",
+        "links":[
+            {
+                "nombre" : "Educandus",
+                "url":"lms.educandus.cl",
+                "img" : "#"
+            },
+            {
+                "nombre" : "Utalca",
+                "url":"www.utalca.cl",
+                "img" : "#"
+            }
+        ]
+    }
+]

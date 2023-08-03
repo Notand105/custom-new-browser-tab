@@ -1,15 +1,27 @@
 ---
+import Data from "../data/links.json";
+import Link from "../Components/Link.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>New Tab</title>
+  </head>
+  <body>
+    {
+      Data.map((section) => (
+        <div>
+          <h3 title={section.tema}>X</h3>
+          <div>
+            {section.links.map((link) => (
+              <Link titulo={link.nombre} url={link.url} />
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </body>
 </html>
