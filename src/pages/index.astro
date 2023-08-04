@@ -12,24 +12,55 @@ import Searchbar from "../Components/Searchbar.svelte";
 	<meta name="description" content="custom new tab web page" />
     <title>New Tab</title>
   </head>
-  <body>
+  <body >
 	<header>
-		<h1>Notand</h1>
+		<h1 class="text-5xl p-4">Titulo</h1>
 	</header>
-	<main>
+	<main class="container w-full m-auto">
+		<Searchbar client:visible />
+		<div class="container flex gap-4 p-4 justify-evenly m-auto ">
 		{
 		  Data.map((section) => (
-			<div>
-			  <h3 title={section.tema}>X</h3>
-			  <div>
-				{section.links.map((link) => (
-				  <Link titulo={link.nombre} url={link.url} />
-				))}
-			  </div>
+			<div class="cursor-pointer category relative">
+				<h3 title={section.tema}>X</h3>
+				<div class="close absolute min-w-min bg-zinc-600 rounded opacity-90" >
+					<div class="flex flex-col">
+					  {section.links.map((link) => (
+						<Link titulo={link.nombre} url={link.url} />
+					  ))}
+					</div>
+				</div>
 			</div>
 		  ))
 		}
-		<Searchbar client:visible />
+		</div>
 	</main>
 </body>
+<script>
+	let categories = document.querySelectorAll('.category')
+	
+	for(let i = 0; i<categories.length;i++){
+		let categorie = categories[i]
+		let children = categorie.children[1]
+		categorie.onclick = function () {
+			if(children.classList.contains('open')){
+				children.classList.add('close')
+				children.classList.remove('open')
+			}
+			else{
+				children.classList.add('open')
+				children.classList.remove('close')
+			}
+		} 
+	}
+</script>
 </html>
+<style>
+	.open{
+		display:block;
+	}
+	.close{
+		display: none;
+	}
+	
+</style>
