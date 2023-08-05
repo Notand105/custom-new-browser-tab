@@ -14,16 +14,16 @@ import Searchbar from "../Components/Searchbar.svelte";
   </head>
   <body >
 	<header>
-		<h1 class="text-5xl p-4">Titulo</h1>
+		<h1 class="text-5xl p-4 text-center">Titulo</h1>
 	</header>
 	<main class="container w-full m-auto">
 		<Searchbar client:visible />
-		<div class="container flex gap-4 p-4 justify-evenly m-auto ">
+		<div class="container flex gap-4 p-4 justify-evenly m-auto mt-10 flex-col md:flex-row ">
 		{
 		  Data.map((section) => (
-			<div class="cursor-pointer category relative">
-				<h3 title={section.tema}>X</h3>
-				<div class="close absolute min-w-min bg-zinc-600 rounded opacity-90" >
+			<div class="cursor-pointer category relative text-center rounded-full px-4 py-2 ">
+				<h3 class="text-xl" title={section.tema}>{section.tema}</h3>
+				<div class="open min-w-full top-20 bg-zinc-600 rounded" >
 					<div class="flex flex-col">
 					  {section.links.map((link) => (
 						<Link titulo={link.nombre} url={link.url} />
@@ -61,6 +61,9 @@ import Searchbar from "../Components/Searchbar.svelte";
 	}
 	.close{
 		display: none;
+	}
+	.category{
+		/* border-radius: 50%; */
 	}
 	
 </style>

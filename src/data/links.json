@@ -20,7 +20,7 @@
         "links":[
             {
                 "nombre" : "Github",
-                "url":"www.github.com",
+                "url":"https://www.github.com",
                 "img" : "#"
             },
             {
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "tema":"Organización",
+        "tema":"organización",
         "links":[
             {
                 "nombre" : "Trello",
@@ -67,16 +67,16 @@
         ]
     },
     {
-        "tema":"Universidad",
+        "tema":"universidad",
         "links":[
             {
                 "nombre" : "Educandus",
-                "url":"lms.educandus.cl",
+                "url":"https://lms.educandus.cl",
                 "img" : "#"
             },
             {
                 "nombre" : "Utalca",
-                "url":"www.utalca.cl",
+                "url":"https://www.utalca.cl",
                 "img" : "#"
             }
         ]
