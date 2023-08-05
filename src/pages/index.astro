@@ -14,16 +14,16 @@ import Searchbar from "../Components/Searchbar.svelte";
   </head>
   <body >
 	<header>
-		 <h1 class="text-5xl p-4 text-center">05:01 PM</h1> 
+		 <!-- <h1 class="text-5xl p-4 text-center">05:01 PM</h1>  -->
 	</header>
-	<main class="container w-full m-auto mt-8">
+	<main class="container h-screen flex flex-row-reverse justify-center w-full m-auto relative">
 		<Searchbar client:visible />
-		<div class="container flex gap-4 p-4 justify-evenly m-auto mt-10 flex-col ">
+		<div class="bg-white flex rounded-3xl shadow-lg w-fit my-auto  h-3/5 justify-center top-auto flex-col ">
 		{
 		  Data.map((section) => (
 			<div class="cursor-pointer relative text-center rounded-full px-4 py-2 ">
-				<h3 class="text-xl" title={section.tema}><img alt={section.tema} src={section.icon} width="50px" /></h3>
-				<div class="min-w-full top-20 bg-zinc-600 rounded" >
+				<h3 class="text-xl" title={section.tema}><img alt={section.tema} src={section.icon} width="50px" class="hover:scale-95" /></h3>
+				<div class="close  min-w-full top-20 bg-zinc-600 rounded" >
 					<div class="flex flex-col">
 					  {section.links.map((link) => (
 						<Link titulo={link.nombre} url={link.url} />
@@ -44,8 +44,13 @@ import Searchbar from "../Components/Searchbar.svelte";
 		padding: 0;
 	}
 	body{
-		background-color:whitesmoke;
+		background-image: url('https://r4.wallpaperflare.com/wallpaper/658/213/200/aeforia-abstract-lines-pixel-sorting-wallpaper-e0a028d868476b3181016d478c4ae831.jpg');
 		color: #121212;
+		background-size: cover;
+		z-index: -100;
+	}
+	.close{
+		display:none
 	}
 	
 </style>
