@@ -14,16 +14,16 @@ import Searchbar from "../Components/Searchbar.svelte";
   </head>
   <body >
 	<header>
-		<!-- <h1 class="text-5xl p-4 text-center">Titulo</h1> -->
+		 <h1 class="text-5xl p-4 text-center">05:01 PM</h1> 
 	</header>
 	<main class="container w-full m-auto mt-8">
 		<Searchbar client:visible />
-		<div class="container flex gap-4 p-4 justify-evenly m-auto mt-10 flex-col md:flex-row ">
+		<div class="container flex gap-4 p-4 justify-evenly m-auto mt-10 flex-col ">
 		{
 		  Data.map((section) => (
-			<div class="cursor-pointer category relative text-center rounded-full px-4 py-2 ">
-				<h3 class="text-xl" title={section.tema}>{section.tema}</h3>
-				<div class="open min-w-full top-20 bg-zinc-600 rounded" >
+			<div class="cursor-pointer relative text-center rounded-full px-4 py-2 ">
+				<h3 class="text-xl" title={section.tema}><img alt={section.tema} src={section.icon} width="50px" /></h3>
+				<div class="min-w-full top-20 bg-zinc-600 rounded" >
 					<div class="flex flex-col">
 					  {section.links.map((link) => (
 						<Link titulo={link.nombre} url={link.url} />
@@ -36,24 +36,6 @@ import Searchbar from "../Components/Searchbar.svelte";
 		</div>
 	</main>
 </body>
-<script>
-	let categories = document.querySelectorAll('.category')
-	
-	for(let i = 0; i<categories.length;i++){
-		let categorie = categories[i]
-		let children = categorie.children[1]
-		categorie.onclick = function () {
-			if(children.classList.contains('open')){
-				children.classList.add('close')
-				children.classList.remove('open')
-			}
-			else{
-				children.classList.add('open')
-				children.classList.remove('close')
-			}
-		} 
-	}
-</script>
 </html>
 <style>
 	*{
@@ -62,17 +44,8 @@ import Searchbar from "../Components/Searchbar.svelte";
 		padding: 0;
 	}
 	body{
-		background-color: #161616;
-		color: whitesmoke;
-	}
-	.open{
-		display:block;
-	}
-	.close{
-		display: none;
-	}
-	.category{
-		/* border-radius: 50%; */
+		background-color:whitesmoke;
+		color: #121212;
 	}
 	
 </style>
