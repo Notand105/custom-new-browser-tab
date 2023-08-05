@@ -14,9 +14,9 @@ import Searchbar from "../Components/Searchbar.svelte";
   </head>
   <body >
 	<header>
-		<h1 class="text-5xl p-4 text-center">Titulo</h1>
+		<!-- <h1 class="text-5xl p-4 text-center">Titulo</h1> -->
 	</header>
-	<main class="container w-full m-auto">
+	<main class="container w-full m-auto mt-8">
 		<Searchbar client:visible />
 		<div class="container flex gap-4 p-4 justify-evenly m-auto mt-10 flex-col md:flex-row ">
 		{
@@ -56,6 +56,15 @@ import Searchbar from "../Components/Searchbar.svelte";
 </script>
 </html>
 <style>
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background-color: #161616;
+		color: whitesmoke;
+	}
 	.open{
 		display:block;
 	}
