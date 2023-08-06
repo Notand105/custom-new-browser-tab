@@ -1,0 +1,21 @@
+---
+import favorites from '../data/favorites.json'
+---
+<div class="border-b bg-slate-800 p-10 flex justify-evenly">
+{
+    favorites.map((fav)=>(
+        <div class="flex">
+            <a target="_blank" href={fav.url} >
+                <img class="" alt={fav.name} src={fav.logo} />    
+            </a>    
+        </div>
+    ))
+}
+
+</div>
+<style>
+    img{
+        max-width: 50px;
+        max-height: 50px;
+    }
+</style>

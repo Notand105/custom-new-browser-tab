@@ -2,6 +2,7 @@
 import Data from "../data/links.json";
 import Link from "../Components/Link.astro";
 import Searchbar from "../Components/Searchbar.svelte";
+import Favorites from "../Components/Favorites.astro";
 ---
 
 <html lang="en">
@@ -13,15 +14,17 @@ import Searchbar from "../Components/Searchbar.svelte";
     <title>New Tab</title>
   </head>
   <body>
+    <div>
+
     <header>
-      <!-- <h1 class="text-5xl p-4 text-center">05:01 PM</h1>  -->
+      <Favorites />
     </header>
     <main
-      class="container h-screen flex flex-row-reverse justify-center w-full m-auto relative"
+      class="container h-screen pt-20 flex flex-row-reverse justify-center w-full m-auto relative"
     >
       <Searchbar client:visible />
       <div
-        class="bg-white flex relative rounded-3xl shadow-lg w-fit my-auto h-fit justify-center top-auto flex-col"
+        class="bg-white flex relative rounded-3xl shadow-lg w-fit  h-fit justify-center top-auto flex-col"
       >
         {
           Data.map((section) => (
@@ -46,6 +49,8 @@ import Searchbar from "../Components/Searchbar.svelte";
         }
       </div>
     </main>
+    <!-- <Favorites /> -->
+  </div>
   </body>
   <script>
     let categories = document.querySelectorAll(".category");
@@ -70,9 +75,9 @@ import Searchbar from "../Components/Searchbar.svelte";
         let categorie = categories[i];
         let children = categorie.children[1];
         if (i != index) {
-			children.classList.remove("open")
-			children.classList.remove("close")
-			children.classList.add("close")
+          children.classList.remove("open");
+          children.classList.remove("close");
+          children.classList.add("close");
         }
       }
     }
@@ -85,12 +90,24 @@ import Searchbar from "../Components/Searchbar.svelte";
     padding: 0;
   }
   body {
-    background-image: url("https://r4.wallpaperflare.com/wallpaper/648/708/35/nature-landscape-digital-art-mountains-wallpaper-f94038adf17afdeb2637e84ff0e106fd.jpg");
     color: #121212;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+  }
+  body::before {
+    content: "";
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/283/883/755/monochrome-space-kanji-dog-wallpaper-5970b8ad711aedcb1617e8cf80f1567d.jpg");
     background-size: cover;
-    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
   }
   .close {
     display: none;
+  
   }
 </style>

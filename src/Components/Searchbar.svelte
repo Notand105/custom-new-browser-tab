@@ -1,5 +1,5 @@
 <script>
-    let Days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+    let Days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
     let Months = ['Enero', 'Febrero', 'Marzo','Abril','Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     let query = 'buscar...'
     let first_focus = false
@@ -7,7 +7,7 @@
     let interval
     let hour = new Date()
     $: timeToShow =  hour.getHours() + ':' + hour.getMinutes() + ':' + hour.getSeconds()  
-    $: dateToShow = Days[hour.getDate()] + ' ' +  hour.getDay() + ' - ' + Months[hour.getMonth()]
+    $: dateToShow = Days[hour.getDay()] + ' ' +  hour.getDate() + ' - ' + Months[hour.getMonth()]
     interval = setInterval(()=>{
         hour = new Date()
     },1000)
