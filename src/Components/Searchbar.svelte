@@ -32,7 +32,7 @@
     <h3 class="text-2xl text-center text-white">{timeToShow}</h3>
     <form on:submit={search} class="flex flex-row mx-auto border-zinc-700 w-4/5 px-4 gap-2">
         <input on:focus={foc} bind:value={query}  type="text" name="" class="flex-1 text-zinc-600 px-4 rounded-full border border-zinc-600  shadow-lg p-2 " />
-        <button on:click={search}  class="bg-white rounded-full hover:bg-zinc-300 p-2 " type="submit"><img src="https://thenounproject.com/api/private/icons/3101577/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" alt="search button" width="30px" /></button>
+        <button on:click={search}  class="bg-white rounded-full hover:bg-zinc-300 p-2 " type="submit"><img width="30px" src="buscar.svg" alt="buscar" /></button>
     </form>
 </section>
 

@@ -1,21 +1,20 @@
 ---
 import favorites from '../data/favorites.json'
 ---
-<div class="border-b bg-slate-800 p-10 flex justify-evenly">
+<div class="p-10 flex justify-center opacity-100 ">
 {
     favorites.map((fav)=>(
-        <div class="flex">
+        <div class="bg-slate-700 flex-1 flex justify-center hover:bg-slate-300 p-4 " >
             <a target="_blank" href={fav.url} >
-                <img class="" alt={fav.name} src={fav.logo} />    
+                <img  alt={fav.name} src={fav.logo} />    
             </a>    
         </div>
     ))
 }
-
 </div>
 <style>
     img{
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 30px;
+        max-height: 30px;
     }
 </style>

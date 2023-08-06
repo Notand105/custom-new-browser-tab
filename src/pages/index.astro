@@ -13,10 +13,8 @@ import Favorites from "../Components/Favorites.astro";
     <meta name="description" content="custom new tab web page" />
     <title>New Tab</title>
   </head>
-  <body>
-    <div>
-
-    <header>
+  <body class="body">
+    <header class="relative">
       <Favorites />
     </header>
     <main
@@ -37,8 +35,8 @@ import Favorites from "../Components/Favorites.astro";
                   class="hover:scale-95"
                 />
               </h3>
-              <div class="close absolute  min-w-full top-2 left-20 bg-slate-200 rounded">
-                <div class="flex flex-col">
+              <div class="close absolute overflow-hidden  min-w-full top-2 left-20 bg-white rounded">
+                <div class="flex flex-col ">
                   {section.links.map((link) => (
                     <Link titulo={link.nombre} url={link.url} />
                   ))}
@@ -49,8 +47,6 @@ import Favorites from "../Components/Favorites.astro";
         }
       </div>
     </main>
-    <!-- <Favorites /> -->
-  </div>
   </body>
   <script>
     let categories = document.querySelectorAll(".category");
@@ -84,18 +80,22 @@ import Favorites from "../Components/Favorites.astro";
   </script>
 </html>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
   * {
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  body {
+  .body {
+    font-family: 'Poppins', sans-serif;
     color: #121212;
     position: relative;
     background-color: #121212;
     overflow: hidden;
-  }
-  body::before {
+  } 
+  .body::before {
     content: "";
     background-image: url("https://r4.wallpaperflare.com/wallpaper/283/883/755/monochrome-space-kanji-dog-wallpaper-5970b8ad711aedcb1617e8cf80f1567d.jpg");
     background-size: cover;
