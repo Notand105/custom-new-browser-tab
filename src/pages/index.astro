@@ -9,48 +9,88 @@ import Searchbar from "../Components/Searchbar.svelte";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-	<meta name="description" content="custom new tab web page" />
+    <meta name="description" content="custom new tab web page" />
     <title>New Tab</title>
   </head>
-  <body >
-	<header>
-		 <!-- <h1 class="text-5xl p-4 text-center">05:01 PM</h1>  -->
-	</header>
-	<main class="container h-screen flex flex-row-reverse justify-center w-full m-auto relative">
-		<Searchbar client:visible />
-		<div class="bg-white flex rounded-3xl shadow-lg w-fit my-auto  h-3/5 justify-center top-auto flex-col ">
-		{
-		  Data.map((section) => (
-			<div class="cursor-pointer relative text-center rounded-full px-4 py-2 ">
-				<h3 class="text-xl" title={section.tema}><img alt={section.tema} src={section.icon} width="50px" class="hover:scale-95" /></h3>
-				<div class="close  min-w-full top-20 bg-zinc-600 rounded" >
-					<div class="flex flex-col">
-					  {section.links.map((link) => (
-						<Link titulo={link.nombre} url={link.url} />
-					  ))}
-					</div>
-				</div>
-			</div>
-		  ))
-		}
-		</div>
-	</main>
-</body>
+  <body>
+    <header>
+      <!-- <h1 class="text-5xl p-4 text-center">05:01 PM</h1>  -->
+    </header>
+    <main
+      class="container h-screen flex flex-row-reverse justify-center w-full m-auto relative"
+    >
+      <Searchbar client:visible />
+      <div
+        class="bg-white flex relative rounded-3xl shadow-lg w-fit my-auto h-fit justify-center top-auto flex-col"
+      >
+        {
+          Data.map((section) => (
+            <div class="cursor-pointer relative text-center rounded-full px-4 py-2 category">
+              <h3 class="text-xl" title={section.tema}>
+                <img
+                  alt={section.tema}
+                  src={section.icon}
+                  width="50px"
+                  class="hover:scale-95"
+                />
+              </h3>
+              <div class="close absolute  min-w-full top-2 left-20 bg-slate-200 rounded">
+                <div class="flex flex-col">
+                  {section.links.map((link) => (
+                    <Link titulo={link.nombre} url={link.url} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </main>
+  </body>
+  <script>
+    let categories = document.querySelectorAll(".category");
+
+    for (let i = 0; i < categories.length; i++) {
+      let categorie = categories[i];
+      let children = categorie.children[1];
+      categorie.onclick = function () {
+        close_all(categories, i);
+        if (children.classList.contains("open")) {
+          children.classList.add("close");
+          children.classList.remove("open");
+        } else {
+          children.classList.add("open");
+          children.classList.remove("close");
+        }
+      };
+    }
+
+    function close_all(categories, index) {
+      for (let i = 0; i < categories.length; i++) {
+        let categorie = categories[i];
+        let children = categorie.children[1];
+        if (i != index) {
+			children.classList.remove("open")
+			children.classList.remove("close")
+			children.classList.add("close")
+        }
+      }
+    }
+  </script>
 </html>
 <style>
-	*{
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-	body{
-		background-image: url('https://r4.wallpaperflare.com/wallpaper/658/213/200/aeforia-abstract-lines-pixel-sorting-wallpaper-e0a028d868476b3181016d478c4ae831.jpg');
-		color: #121212;
-		background-size: cover;
-		z-index: -100;
-	}
-	.close{
-		display:none
-	}
-	
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/648/708/35/nature-landscape-digital-art-mountains-wallpaper-f94038adf17afdeb2637e84ff0e106fd.jpg");
+    color: #121212;
+    background-size: cover;
+    z-index: -100;
+  }
+  .close {
+    display: none;
+  }
 </style>
