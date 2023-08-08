@@ -28,7 +28,7 @@
 </script>
 
 <section class=" flex flex-col gap-8 w-full mx-auto justify-center h-1/2 ">
-    <h2 class="text-5xl text-center text-white">{dateToShow}</h2>
+    <h2 class="text-3xl text-center text-white">{dateToShow}</h2>
     <h3 class="text-2xl text-center text-white">{timeToShow}</h3>
     <form on:submit={search} class="flex flex-row mx-auto border-zinc-700 w-4/5 px-4 gap-2">
         <input on:focus={foc} bind:value={query}  type="text" name="" class="flex-1 text-zinc-600 px-4 rounded-full border border-zinc-600  shadow-lg p-2 " />

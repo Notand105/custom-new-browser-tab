@@ -1,10 +1,10 @@
 ---
 import favorites from '../data/favorites.json'
 ---
-<div class="p-10 flex justify-center opacity-100 ">
+<div class="cont p-10 flex justify-center opacity-100 ">
 {
     favorites.map((fav)=>(
-        <div class="bg-slate-700 flex-1 flex justify-center hover:bg-slate-300 p-4 " >
+        <div class="bg-white flex-1 flex justify-center hover:bg-slate-300 p-4 " >
             <a target="_blank" href={fav.url} >
                 <img  alt={fav.name} src={fav.logo} />    
             </a>    
@@ -17,4 +17,13 @@ import favorites from '../data/favorites.json'
         max-width: 30px;
         max-height: 30px;
     }
+    .cont :nth-child(1){
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .cont :nth-last-child(1){
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
 </style>
